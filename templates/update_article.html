@@ -1,0 +1,18 @@
+{% extends "mother.html" %}
+
+{% block title %}Изменить статью{% endblock %}
+
+{% block body %}
+<div class="container mt-5" style=" text-align: center;">
+    <h1>Что меняем?</h1>
+    <form method="post" style="width: 60%; margin: 0 auto;"><br><br>
+        <input type="text" name="title1" id = "title2" class="form-control" value="{{ article.title }}" placeholder="Введите название статьи" style="text-align: center;"><br><br>
+        <textarea type="text" name= "intro1" id = "intro2" class="form-control"> {{ article.intro }} </textarea><br><br>
+        <textarea name= "text1" id = "text2" placeholder="Введите текст статьи" class="form-control"> {{ article.text }} </textarea><br><br>
+        <input type="date" name="date2" class="form-control" style="text-align: center;"><br><br>
+        <button type="submit" class="btn btn-primary"> Обновить </button>
+
+    </form>
+</div>
+
+{% endblock %}

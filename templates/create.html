@@ -1,0 +1,21 @@
+{% extends "mother.html" %}
+
+{% block title %}Начинай творить!{% endblock %}
+
+{% block body %}
+<div class="container mt-5" style=" text-align: center;">
+    <h1>Добавь статью самь!</h1>
+    <form action="create" method="post" style="width: 60%; margin: 0 auto;"><br><br>
+        <input type="text" name="title1" id = "title1" class="form-control" placeholder="Введите название статьи" style="text-align: center;"><br><br>
+        <textarea name= "intro1" id = "intro1" placeholder="Введите интро статьи" class="form-control"> </textarea><br><br>
+        <textarea name= "text1" id = "text1" placeholder="Введите текст статьи" class="form-control"> </textarea><br><br>
+        <input type="date" name="date1" class="form-control" style="text-align: center;"><br><br>
+        <button type="submit" class="btn btn-primary"> Добавить статью </button>
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

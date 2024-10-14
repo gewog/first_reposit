@@ -1,0 +1,21 @@
+{% extends "mother.html" %}
+
+{% block title %}Читай и развивайся!{% endblock %}
+
+{% block body %}
+<div class="container mt-5" style=" text-align: left;">
+
+{% for el in myp %}
+        <div class="col d-flex flex-column align-items-start gap-2">
+        <h2 class="fw-bold text-body-emphasis">{{ el.title }}</h2>
+        <p class="text-body-secondary">{{ el.intro }}</p>
+        <p class="text-body-secondary">{{ el.text[:300]+"..." }}</p>
+        <span class="when_i_move"><a href="{{ url_for('more', id = el.id) }}" class="btn btn-dark">Читать далее</a></span>
+        <span> Дата создания: {{ el.date.date() }} </span>
+    </div>
+    <br>
+{% endfor %}
+
+</div>
+
+{% endblock %}

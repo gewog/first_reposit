@@ -1,0 +1,25 @@
+{% extends "mother.html" %}
+
+{% block title %}Заитересовался :3{% endblock %}
+
+{% block body %}
+<div class="container mt-5" style=" text-align: left;">
+
+{% for el in full_read %}
+    <div class="col d-flex flex-column align-items-start gap-2">
+        <h2 class="fw-bold text-body-emphasis">{{ el.title }}</h2>
+        <p class="text-body-secondary">{{ el.text }}</p>
+        <span class="when_i_move"><a href="{{ url_for('read_posts') }}" class="btn btn-dark">Назад</a>
+            <a href="{{el.id}}/del" class="btn btn-danger">Удалить</a>
+            <a href="{{el.id}}/update" class="btn btn-dark">Обновить</a>
+        </span>
+
+
+        <span> Дата создания: {{ el.date.date() }} </span>
+    </div>
+    <br>
+{% endfor %}
+
+</div>
+
+{% endblock %}
